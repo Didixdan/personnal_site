@@ -1,5 +1,3 @@
-import '../assets/styles/tailwind.scss';
-
 <template>
   <div class="container">
     <div>

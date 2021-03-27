@@ -1,13 +1,13 @@
 <template>
-  <header class="sticky top-0">
+  <header>
     <div class="header-tab">
-      <a href="#" class="title-logo" rel="home">
+      <a href="#" class="title-logo" title="Page d'accueil du site" rel="home">
         <img src="@/assets/images/logo.png" alt="Logo de Alexandre VARIN" width="80" height="80" />
         <h1>Alexandre - Développeur DevOps</h1>
       </a>
 
       <div class="btn-menu">
-        <i class="icon-menu fa fa-bars text-white"></i>
+        <font-awesome-icon icon="bars" class="text-green-500" />
       </div>
 
       <nav class="site-navigation" role="navigation">
@@ -28,7 +28,7 @@
       </nav>
     </div>
 
-    <p class="random-sentence">Random sentence</p>
+    <p class="random-sentence" title="Citation aléatoire" @click="setRandomSentence">« {{ randomSentence }} »</p>
   </header>
 </template>
 
