@@ -10,10 +10,8 @@
 export default {
   layout: 'error', // you can set a custom layout for the error page
   props: {
-    error: {
-      type: String,
-      required: true,
-    },
+    // eslint-disable-next-line vue/require-default-prop
+    error: String,
   },
 }
 </script>

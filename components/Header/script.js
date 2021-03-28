@@ -1,4 +1,6 @@
 import './style.scss'
+import tailwindConfig from '@/tailwind.config.js'
+
 export default {
   name: 'Header',
   data() {
@@ -29,6 +31,9 @@ export default {
         "L'informatique, ça fait gagner beaucoup de temps... à condition d'en avoir beaucoup devant soi ! - Mireille Sitbon",
       ],
       randomSentence: String,
+      isMobile: true,
+      showMobileMenu: false,
+      themeModeChecked: false,
     }
   },
 
@@ -37,9 +42,43 @@ export default {
       const nb = Math.floor(Math.random() * this.liste.length)
       this.randomSentence = this.liste[nb]
     },
+    triggerSizeWin() {
+      this.isMobile = window.innerWidth < tailwindConfig.theme.screens.md.replace('px', '')
+    },
+    triggerMobileMenu() {
+      this.showMobileMenu = !this.showMobileMenu
+      if (this.showMobileMenu) document.documentElement.style.overflow = 'hidden'
+    },
+    triggerDarkMode() {
+      document.documentElement.classList.toggle('dark')
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+    },
   },
 
   created() {
     this.setRandomSentence()
+  },
+
+  mounted() {
+    this.triggerSizeWin()
+    window.addEventListener('resize', this.triggerSizeWin)
+
+    const cl = document.documentElement.classList
+    cl.remove('light', 'dark')
+    const theme = localStorage.getItem('theme')
+    if (!theme) localStorage.setItem('theme', 'system')
+    if (theme === 'system') {
+      const preference = '(prefers-color-scheme: dark)'
+      const m = window.matchMedia(preference)
+      m.media !== preference || m.matches ? cl.add('dark') : cl.add('light')
+      if (cl.contains('dark')) this.themeModeChecked = true
+    } else {
+      cl.add(theme)
+      if (theme === 'dark') this.themeModeChecked = true
+    }
+  },
+
+  destroyed: () => {
+    window.removeEventListener('resize', this.triggerSizeWin)
   },
 }

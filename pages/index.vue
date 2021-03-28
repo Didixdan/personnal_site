@@ -2,7 +2,6 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">Alexandre - Développeur DevOps</h1>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" rel="noopener noreferrer" class="button--green"> Documentation </a>
         <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey"> GitHub </a>
@@ -16,9 +15,6 @@ export default {}
 </script>
 
 <style>
-body {
-  background: linear-gradient(to top, #abbaab, #fff);
-}
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }

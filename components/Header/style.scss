@@ -1,14 +1,15 @@
 header {
-  @apply sticky top-0 flex flex-row-reverse flex-wrap;
+  @apply top-0 flex flex-row-reverse flex-wrap;
   .header-tab {
-    @apply mx-auto text-gray-600 w-full;
+    @apply flex text-gray-600 p-4 w-full justify-between items-center;
+    @apply dark:text-gray-200;
     .title-logo {
-      @apply flex transition p-2 mt-4 mx-auto text-xl justify-start items-center max-w-max;
+      @apply flex transition text-xl justify-start items-center max-w-max;
       h1 {
         @apply transition-all ml-5;
       }
       img {
-        @apply transition transform;
+        @apply transition transform w-16 h-16;
       }
       &:hover {
         img {
@@ -19,10 +20,14 @@ header {
         @apply text-green-500;
       }
     }
+    .btn-menu {
+      @apply transition text-center text-4xl cursor-pointer;
+    }
     .site-navigation {
-      @apply text-center text-xl absolute w-full h-0 m-0 top-0 left-0 overflow-y-auto z-20 bg-gray-800;
+      @apply text-center text-lg self-center;
       .menu {
         @apply text-gray-600;
+        @apply dark:text-gray-200;
         .menu-item {
           @apply mb-5;
           &:last-child {
@@ -31,34 +36,101 @@ header {
         }
       }
     }
+    .darkMode {
+      @apply relative inline-block w-14 h-8;
+      input {
+        @apply opacity-0 w-0 h-0;
+      }
+      .slider {
+        @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-yellow-400 transition;
+        &::before {
+          @apply absolute h-6 w-6 left-1 bottom-1  transition;
+          font-family: 'Font Awesome 5 Solid';
+          content: '☀️';
+        }
+      }
+      .round {
+        @apply rounded-2xl;
+        &::before {
+          @apply rounded-3xl;
+        }
+      }
+      input:checked + .slider {
+        @apply bg-gray-800;
+      }
+      input:checked + .slider::before {
+        @apply transform translate-x-6;
+        content: '🌙';
+      }
+    }
+    .mobile-navigation {
+      @apply absolute max-h-0 h-full top-0 left-0 overflow-y-scroll z-20 bg-gray-800;
+      .menu {
+        @apply mx-auto;
+        ul {
+          @apply divide-y divide-green-200;
+        }
+        @apply text-gray-300;
+        .menu-item {
+          @apply mx-auto text-2xl transition mt-8 w-1/2;
+          &:last-of-type {
+            @apply mt-5 pt-5;
+          }
+        }
+      }
+      @apply w-full #{!important};
+      transition: all 300ms cubic-bezier(1, -0.51, 0.56, 1.7);
+    }
+    .active-menu {
+      @apply max-h-full pt-10;
+    }
+    .active-close-menu {
+      @apply block #{!important};
+      @apply cursor-pointer;
+    }
     .btn-close-menu {
-      @apply hidden fixed text-white text-xl font-extrabold;
+      @apply hidden absolute top-8 right-8 text-white text-xl font-extrabold;
     }
   }
   .random-sentence {
-    @apply transition transform cursor-pointer max-w-max mx-auto text-center p-2 text-base italic text-gray-600;
+    @apply hidden transition rounded-xl transform cursor-pointer max-w-max mx-auto text-center p-2 text-base italic text-gray-600;
+    @apply dark:text-gray-200;
     &:hover {
-      @apply scale-105 rounded-xl bg-gray-100;
+      @apply scale-105 bg-gray-100;
+      @apply dark:bg-gray-800;
     }
   }
 }
 
 @screen md {
   .header-tab {
-    @apply flex items-center w-3/4;
+    @apply w-3/4 mt-5;
     .title-logo {
       @apply float-left;
       @apply mx-0 #{!important};
     }
+    .btn-menu {
+      @apply hidden;
+    }
     .site-navigation {
-      @apply static w-6/12 text-lg text-right flex justify-end items-start;
-      transition: all 300ms cubic-bezier(1, -0.51, 0.56, 1.7);
+      @apply static text-lg text-right max-w-max flex justify-end items-center max-h-full;
+      transition: max-height 150ms ease-in-out;
       .menu {
+        ul {
+          @apply divide-x divide-green-200 flex items-center;
+        }
         .menu-item {
-          @apply inline-block ml-5 mb-0 relative;
+          @apply inline-block ml-5 pl-5 relative transition;
+          @apply mb-0 #{!important};
+          &:hover {
+            @apply text-gray-400;
+          }
         }
       }
     }
+  }
+  .random-sentence {
+    @apply block #{!important};
   }
 }
 

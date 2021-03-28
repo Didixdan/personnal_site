@@ -1,11 +1,18 @@
 <template>
-  <div>
+  <div class="main">
     <Header />
     <Nuxt />
   </div>
 </template>
 
 <style>
+.main {
+  /* background-image: linear-gradient(to top, #abbaab, #fff); */
+  @apply bg-gradient-to-t from-yellow-100 to-white;
+  transition: background 300ms ease-in-out;
+  @apply dark:from-gray-800 dark:to-gray-700;
+}
+
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
