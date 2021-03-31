@@ -1,0 +1,23 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.all-graduation {
+  @apply flex flex-col text-center mt-12 items-center text-gray-700 transition;
+  @apply dark:text-gray-200;
+  .graduation {
+    @apply flex flex-row mr-64 text-3xl mt-10 mb-10 transition opacity-0;
+    animation: 1s appear forwards;
+    .icon {
+      @apply text-4xl mr-5;
+    }
+  }
+  .graduation.alt {
+    @apply mr-0 ml-64;
+  }
+}
