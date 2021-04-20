@@ -20,4 +20,8 @@
   .graduation.alt {
     @apply mr-0 ml-64;
   }
+
+  canvas {
+    position: absolute;
+  }
 }
