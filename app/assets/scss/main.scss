@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.header-hero {
+  @apply h-screen w-full flex items-center justify-center z-50 pointer-events-none;
+}
+
+.header-content {
+  @apply text-center pointer-events-auto will-change-transform;
+
+  .title {
+    @apply text-7xl leading-none lg:text-8xl;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .subtitle {
+    @apply text-2xl italic text-primary lg:text-3xl;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
