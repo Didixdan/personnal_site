@@ -19,7 +19,7 @@ export const legal = {
   publicationDirector: 'Alexandre VARIN',
   host: {
     name: 'Vercel',
-    address: '2 rue Kellermann - 59100 Roubaix - France',
-    website: ' https://www.ovhcloud.com/fr/',
+    address: '440 N Barranca Ave #4133, Covina, CA 91723, États-Unis',
+    website: 'https://vercel.com/',
   },
 } as const;

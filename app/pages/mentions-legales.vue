@@ -39,10 +39,9 @@
         <ul>
           <li><strong>Raison sociale :</strong> {{ legal.host.name }}</li>
           <li><strong>Adresse :</strong> {{ legal.host.address }}</li>
-          <li><strong>Téléphone :</strong> {{ legal.host.phone }}</li>
           <li>
             <strong>Site web :</strong>
-            <a :href="legal.host.website" target="_blank" rel="noopener noreferrer">{{ legal.host.website }}</a>
+            <a :href="legal.host.website" target="_blank" rel="noopener noreferrer"> {{ legal.host.website }}</a>
           </li>
         </ul>
       </section>
