@@ -58,19 +58,23 @@
       </section>
 
       <section>
-        <h2>5. Données personnelles</h2>
+        <h2>5. Vercel Analytics</h2>
         <p>
-          Conformément au Règlement général sur la protection des données (RGPD) et à la loi
-          « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification,
-          de suppression et d'opposition aux données vous concernant.
+          Nous mesurons l'audience de ce site de manière totalement anonyme
+          grâce à l'outil Vercel Analytics (Vercel Inc., États-Unis).
+          Cet outil est conçu pour respecter votre vie privée : il fonctionne sans aucun cookie et ne
+          récolte aucune donnée personnelle.
         </p>
         <p>
-          Pour exercer ces droits, vous pouvez contacter l'éditeur à l'adresse suivante&nbsp;:
-          <a :href="`mailto:${legal.editor.email}`">{{ legal.editor.email }}</a>.
+          Les statistiques d'utilisation sont gérées et traitées directement
+          depuis notre propre nom de domaine. Cette démarche repose sur notre intérêt
+          légitime à analyser et améliorer notre site web (Article 6.1.f du RGPD).
+          Enfin, la société Vercel est certifiée conforme à l'accord de protection des données
+          entre l'Union européenne et les États-Unis (Data Privacy Framework).
         </p>
         <p>
           Ce site ne collecte des données personnelles que si vous nous contactez volontairement
-          (formulaire, e-mail). Aucune donnée n'est cédée à des tiers à des fins commerciales.
+          (e-mail). Aucune donnée n'est cédée à des tiers à des fins commerciales.
         </p>
       </section>
 

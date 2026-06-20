@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/fonts',
     'nuxt-svgo',
+    '@vercel/analytics'
   ],
   css: ['~/assets/scss/main.scss'],
   plugins: ['~/plugins/gsap.client.js'],
