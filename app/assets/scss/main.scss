@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+ @apply overflow-x-hidden;
+}
+
 .header-hero {
   @apply h-screen w-full flex items-center justify-center z-50 pointer-events-none;
 }
