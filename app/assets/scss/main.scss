@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
- @apply overflow-x-hidden;
+html, body {
+ @apply max-w-full overflow-x-hidden;
 }
 
 .header-hero {
