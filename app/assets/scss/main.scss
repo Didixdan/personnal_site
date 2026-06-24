@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html, body {
- @apply max-w-full overflow-x-hidden;
+ @apply max-w-full overflow-x-clip;
 }
 
 .header-hero {
